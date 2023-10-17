@@ -1420,7 +1420,7 @@ import sys
 # handles input from the Command Line either as a parameter or as an input 
 #   when the program is run
 # also validates the file name is valid using regex
-valid_file_name_pattern = "^.+\.bp$"
+valid_file_name_pattern = "^.+\.bl$"
 def get_code():
     # extract file name or request from user
     arguments = sys.argv
@@ -1428,14 +1428,14 @@ def get_code():
         file_name = arguments[1]
     elif len(arguments) == 1:
         if RUN_PROGRAM_WITHOUT_INPUT: 
-            file_name = "program_code.bp"
+            file_name = "program_code.bl"
         else:
             file_name = input("\nName the file that is to be run\n>>> ")
     else:
         raise Exception("Invalid number of arguments in the CLI")
     # file name validation
     if not re.match(valid_file_name_pattern, file_name):
-        raise Exception("Invalid file name, must have the extension .bp")
+        raise Exception("Invalid file name, must have the extension .bl")
     else:
         file = open(file_name, "r")
         code_lines = file.readlines()
