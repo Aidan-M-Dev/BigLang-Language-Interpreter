@@ -1,5 +1,5 @@
 # BigLang-Language-Interpreter
-A modified version of my programming language interpreter written in Python. I created this for my Computer Science A-level Coursework.
+A modified version of my programming language interpreter written in Python, nicknamed BIGLANG (.bl). I created this for my Computer Science A-level Coursework.
 
 The language is based loosely on the pseudocode style of writing algorithms and supports most basic procedural programming language features.
 This includes:
