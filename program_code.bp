@@ -1,0 +1,17 @@
+INTEGER count = 1
+STRING output_string = ""
+WHILE count ISLESSTHANOREQUALTO 20 DO
+    output_string = ""
+    IF count % 3 ISEQUALTO 0 DO
+        output_string = output_string + "Fizz"
+    ENDIF
+    IF count % 5 ISEQUALTO 0 DO
+        output_string = output_string + "Buzz"
+    ENDIF
+    IF output_string ISNOTEQUALTO "" DO
+        OUTPUT(output_string)
+    ELSE
+        OUTPUT(count)
+    ENDIF
+    count = count + 1
+ENDWHILE

@@ -1,0 +1,240 @@
+OUTPUT("----2.1.1----")
+INTEGER variable_name = 3
+OUTPUT(variable_name)
+
+OUTPUT("----2.1.2----")
+variable_name = -4
+OUTPUT(variable_name)
+
+OUTPUT("----2.1.3.1----")
+INTEGER int_variable = 11
+OUTPUT(int_variable)
+
+OUTPUT("----2.1.3.1.1----")
+OUTPUT(int_variable + 1)
+OUTPUT(int_variable * 2)
+OUTPUT(int_variable // 4)
+OUTPUT(int_variable % 4)
+
+OUTPUT("----2.1.3.2----")
+FLOAT float_variable = 3.5
+OUTPUT(float_variable)
+
+OUTPUT("----2.1.3.2.1----")
+OUTPUT(float_variable + 1.3)
+OUTPUT(float_variable - 1.3)
+OUTPUT(float_variable * 3)
+OUTPUT(float_variable / 0.5)
+
+OUTPUT("----2.1.3.3----")
+CHARACTER char_variable = 'a'
+OUTPUT(char_variable)
+
+OUTPUT("----2.1.3.4----")
+STRING str_variable = "Hello"
+OUTPUT(str_variable)
+
+OUTPUT("----2.1.3.4.1----")
+OUTPUT(str_variable.READBYINDEX(4))
+OUTPUT(str_variable.READBYINDEX([0,3]))
+
+OUTPUT("----2.1.3.4.2----")
+OUTPUT(str_variable + " World!")
+
+OUTPUT("----2.1.3.4.3----")
+OUTPUT(LENGTH(str_variable))
+
+OUTPUT("----2.1.3.5----")
+BOOLEAN bool_variable_1 = TRUE
+OUTPUT(bool_variable_1)
+BOOLEAN bool_variable_2 = FALSE
+OUTPUT(bool_variable_2)
+
+OUTPUT("----2.1.4.1----")
+ARRAY data_structure_example = []
+OUTPUT(data_structure_example)
+
+OUTPUT("----2.1.4.2----")
+ARRAY array_variable = ["Alice", "Bob", "Eve"]
+OUTPUT(array_variable)
+
+OUTPUT("----2.1.4.2.1----")
+OUTPUT(array_variable.READBYINDEX(1))
+OUTPUT(array_variable.READBYINDEX([1,2]))
+
+
+OUTPUT("----2.1.4.2.2----")
+array_variable.APPEND("Mallory")
+OUTPUT(array_variable)
+
+OUTPUT("----2.1.4.2.3----")
+OUTPUT(LENGTH(array_variable))
+
+OUTPUT("----2.1.4.3----")
+TUPLE tuple_variable = <"Paddington", "Mr Gruber", "Mrs Bird", "Mr Brown", "Mr Curry">
+OUTPUT(tuple_variable)
+
+OUTPUT("----2.1.4.3.2----")
+OUTPUT(tuple_variable.READBYINDEX(1))
+OUTPUT(tuple_variable.READBYINDEX([1,2]))
+
+OUTPUT("----2.1.4.3.3----")
+OUTPUT(LENGTH(tuple_variable))
+
+OUTPUT("----2.1.4.4----")
+DICTIONARY dictionary_variable = {'a':"apple", 'b':"banana", 'c':"carrot"}
+
+OUTPUT("----2.1.4.4.1----")
+OUTPUT(dictionary_variable.LOOKUPVALUE('b'))
+
+OUTPUT("----2.1.4.4.2----")
+dictionary_variable.INSERTPAIR('d':"doughnuts")
+OUTPUT(dictionary_variable.LOOKUPVALUE('d'))
+
+OUTPUT("----2.1.4.4.3----")
+OUTPUT(dictionary_variable.LISTKEYS)
+
+OUTPUT("----2.1.4.4.5----")
+OUTPUT(LENGTH(dictionary_variable))
+
+OUTPUT("----2.1.4.5----")
+STACK stack_variable
+stack_variable.ADDITEM("Winnie")
+stack_variable.ADDITEM("Eeyore")
+stack_variable.ADDITEM("Piglet")
+OUTPUT(stack_variable.READITEM)
+stack_variable.POPITEM
+OUTPUT(stack_variable.READITEM)
+stack_variable.POPITEM
+OUTPUT(stack_variable.READITEM)
+
+OUTPUT("----2.1.4.5.1----")
+OUTPUT(LENGTH(stack_variable))
+
+OUTPUT("----2.1.4.6----")
+QUEUE queue_variable
+queue_variable.ADDITEM("Peter Rabbit")
+queue_variable.ADDITEM("Benjamin Bunny")
+queue_variable.ADDITEM("Mr. McGregor")
+OUTPUT(queue_variable.READITEM)
+queue_variable.POPITEM
+OUTPUT(queue_variable.READITEM)
+queue_variable.POPITEM
+OUTPUT(queue_variable.READITEM)
+
+OUTPUT("----2.1.4.6.1----")
+OUTPUT(LENGTH(queue_variable))
+
+OUTPUT("----2.1.4.7----")
+PRIORITYQUEUE priority_queue_variable
+
+OUTPUT("----2.1.4.7.1----")
+priority_queue_variable.ADDITEM("Hercule Poirot", 3)
+
+OUTPUT("----2.1.4.7.2----")
+priority_queue_variable.ADDITEM("Miss Marple", 4)
+priority_queue_variable.ADDITEM("Tommy and Tuppence", 1)
+priority_queue_variable.ADDITEM("Arthur Hastings", 3)
+
+OUTPUT("----2.1.4.7.3----")
+OUTPUT(priority_queue_variable.READITEM)
+priority_queue_variable.POPITEM
+OUTPUT(priority_queue_variable.READITEM)
+priority_queue_variable.POPITEM
+OUTPUT(priority_queue_variable.READITEM)
+priority_queue_variable.POPITEM
+OUTPUT(priority_queue_variable.READITEM)
+
+OUTPUT("----2.1.4.7.4----")
+priority_queue_variable.ADDITEM("Inspector Japp", 10)
+OUTPUT(LENGTH(priority_queue_variable))
+
+OUTPUT("----2.2.3.1----")
+INTEGER number = 2
+IF number ISEQUALTO 1 DO
+    OUTPUT("number is 1")
+ELSE
+    OUTPUT("number is not 1")
+ENDIF
+number = 1
+IF number ISEQUALTO 1 DO
+    OUTPUT("number is 1")
+ELSE
+    OUTPUT("number is not 1")
+ENDIF
+
+OUTPUT("----2.2.3.2----")
+number = 3
+WHILE number ISNOTEQUALTO 0 DO
+    OUTPUT(number)
+    number = number - 1
+ENDWHILE
+
+OUTPUT("----2.2.3.3----")
+ARRAY words = ["book", "calculator", "pen", "laptop"]
+FOR word IN words DO
+    OUTPUT(word)
+ENDFOR
+
+OUTPUT("----2.2.3.5----")
+INTEGER count = 1
+STRING output_string = ""
+WHILE count ISLESSTHANOREQUALTO 10 DO
+    output_string = ""
+    IF count % 3 ISEQUALTO 0 DO
+        output_string = output_string + "Fizz"
+    ENDIF
+    IF count % 5 ISEQUALTO 0 DO
+        output_string = output_string + "Buzz"
+    ENDIF
+    IF output_string ISNOTEQUALTO "" DO
+        OUTPUT(output_string)
+    ELSE
+        OUTPUT(count)
+    ENDIF
+    count = count + 1
+ENDWHILE
+
+OUTPUT("----2.2.4----")
+
+OUTPUT("ISNOTEQUALTO")
+OUTPUT(1 ISNOTEQUALTO 0)
+OUTPUT(1 ISNOTEQUALTO 1)
+
+OUTPUT("ISEQUALTO")
+OUTPUT(1 ISEQUALTO 0)
+OUTPUT(1 ISEQUALTO 1)
+
+OUTPUT("ISLESSTHAN")
+OUTPUT(2 ISLESSTHAN 3)
+OUTPUT(3 ISLESSTHAN 3)
+OUTPUT(4 ISLESSTHAN 3)
+
+OUTPUT("ISGREATERTHAN")
+OUTPUT(2 ISGREATERTHAN 3)
+OUTPUT(3 ISGREATERTHAN 3)
+OUTPUT(4 ISGREATERTHAN 3)
+
+OUTPUT("ISLESSTHANOREQUALTO")
+OUTPUT(2 ISLESSTHANOREQUALTO 3)
+OUTPUT(3 ISLESSTHANOREQUALTO 3)
+OUTPUT(4 ISLESSTHANOREQUALTO 3)
+
+OUTPUT("ISGREATERTHANOREQUALTO")
+OUTPUT(2 ISGREATERTHANOREQUALTO 3)
+OUTPUT(3 ISGREATERTHANOREQUALTO 3)
+OUTPUT(4 ISGREATERTHANOREQUALTO 3)
+
+OUTPUT("AND")
+OUTPUT(FALSE AND FALSE)
+OUTPUT(TRUE AND FALSE)
+OUTPUT(TRUE AND TRUE)
+
+OUTPUT("OR")
+OUTPUT(FALSE OR FALSE)
+OUTPUT(TRUE OR FALSE)
+OUTPUT(TRUE OR TRUE)
+
+OUTPUT("NOT")
+OUTPUT(NOT FALSE)
+OUTPUT(NOT TRUE)
